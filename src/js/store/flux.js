@@ -1,11 +1,9 @@
 const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
-            // Define initial state here
             contacts: []
         },
         actions: {
-            // Define actions here
             fetchContacts: async () => {
                 try {
                     const response = await fetch("https://playground.4geeks.com/contact/agendas/sony");
@@ -20,8 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     const response = await fetch(`https://playground.4geeks.com/contact/agendas/sony/contacts`);
                     const data = await response.json();
                     setStore({ contacts: data.contacts });
-                    // getActions().fetchContacts();
-                } catch (error) {
+                                } catch (error) {
                     console.log("Error fetching contacts:", error);
                 }
             },
@@ -35,7 +32,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                         body: JSON.stringify({
                             name: newContact.name,
                             email: newContact.email,
-                            // agenda_slug: "flavia-agenda",
                             address: newContact.address,
                             phone: newContact.phone
                         })
@@ -67,7 +63,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         body: JSON.stringify({
                             name: contact.name,
                             email: contact.email,
-                            agenda_slug: "flavia-agenda",
+                            agenda_slug: "sony",
                             address: contact.address,
                             phone: contact.phone
                         })

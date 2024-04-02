@@ -31,7 +31,6 @@ export const UpdateContact = () => {
 
         navigate("/");
     };
-// do not update the list
     return (
         <div style={{ width: '50rem', marginTop: '2rem' }}>
             <h2 className="d-flex justify-content-center">Update Contact</h2>
